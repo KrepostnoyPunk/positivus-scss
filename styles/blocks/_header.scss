@@ -1,0 +1,56 @@
+.header{
+    padding-top: 60px;
+
+    &-inner{
+        // первоначальный разброс элементов
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 40px;
+    }
+
+    &-menu {
+        // прижатие контейнера меню  вправо
+        margin-left: auto;
+        font-size: 20px;
+
+        // расположение элементов в ряд
+        &-list{
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
+
+            &-item{
+
+                // увеличение области нажатия
+                &-link{
+                    // без флекса и выравнивания - не будет работать
+                    display: flex;
+                    align-items: center;
+                    height: 48px;
+
+                    // hover эффект
+                    position: relative;
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        translate: -50%;
+                        background-color: currentColor;
+                        width: 0;
+                        height: 2px;
+                        transition-duration: inherit;
+                    }
+
+                    @include hover{
+                        &::after{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

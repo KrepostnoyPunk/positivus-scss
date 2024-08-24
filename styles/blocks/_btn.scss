@@ -1,0 +1,23 @@
+.btn{
+    // изменяет дисплей на inline-flex
+    @include flex-center(true);
+
+    height: var(--btn-height);
+    padding-inline: 35px;
+    font-size: 20px;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border: var(--border);
+    border-radius: var(--btn-border-radius);
+
+    @include hover{
+        cursor: pointer;
+        color: var(--color-dark);
+        background-color: var(--color-lightgreen);
+    }
+
+    &-transparent{
+        color: var(--color-dark);
+        background-color: transparent;
+    }
+}
