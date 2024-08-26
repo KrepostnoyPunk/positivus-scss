@@ -1,0 +1,113 @@
+.hero{
+    // расстояние между hero__main и hero__partners
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--section-padding-y);
+
+    
+    // media
+    @include desktop{
+        row-gap: 60px;
+    }
+
+    //  начальный разброс элементов в hero__main
+    &__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: 30px;
+
+        // media 
+        // (2)
+        @include mobile{
+            flex-direction: column;
+        }
+    }
+
+    // ограничение максимальной ширины + отступы между элементами
+    &__body{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        max-width: 531px;
+        row-gap: 35px;
+
+        // media
+        // как будто body нет и это просто flex элементы что даст возможность менять order (1)
+        @include mobile{
+            display: contents;
+        }
+    }
+
+    &__title{
+        line-height: 76.56px;
+
+        // media
+        // (3)
+        @include mobile{
+            order: -2;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__description{
+        font-size: 20px;
+        line-height: 28px;
+
+        // media
+        @include mobile{
+            margin-bottom: 40px;
+        }
+    }
+
+    &__btn{
+
+        // media
+        @include mobile{
+            width: 100%;
+            max-width: 390px;
+            margin-inline: auto;
+        }
+    }
+
+    &__img{
+
+        // media
+        @include tablet{
+            max-width: 50%;
+            height: auto;
+        }
+
+
+        // media
+        // (4)
+        @include mobile{
+            order: -1;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__partners{
+        //  начальный разброс элементов в hero__patners
+        &-list{
+            display: flex;
+            justify-content: space-between;
+            column-gap: 37px;
+
+            // media
+            // @include tablet {
+            //     display: grid;
+            //     grid-template-columns: repeat(3, 1fr);
+            //     row-gap: 20px;
+            // } КАК БЛЯТЬ КУДА КОГО!?!??!?! ыыыыыыы сука
+        }
+
+        // gray filter for icons
+        &-img{
+            filter: grayscale(1);
+        }
+
+    }
+}

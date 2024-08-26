@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!-- header -->
+    <!-- Header -->
      <header class="header">
         <div class="header-inner container">
             <a href="#" class="header-logo logo">
@@ -55,19 +55,161 @@
                 >
                     Request a quote
                 </button>
-
+                <!-- burger btn -->
                 <button 
                 class="header-btn-burger burger-btn mobile-visible"
                 type="button"
-                >
-                    <svg width="26" height="19" viewBox="0 0 26 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.80664H25" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M1 9.80664H25" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M1 17.8066H25" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+                onclick="mobileOverlay.showModal()"
+                ></button>
         </div>
      </header>
+     <!-- Main -->
+     <main class="main">
+        <!-- Section_1 -->
+        <section class="section container">
+            <div class="section__body">
+                <div class="hero">
+                    <!-- "главная подсекция" с описанием и картинкой -->
+                    <div class="hero__main">
+                        <div class="hero__body">
+                            <h1 class="hero__title">
+                                Navigating the digital landscape for success
+                            </h1>
+                            <div class="hero__description">
+                                <p>
+                                    Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.
+                                </p>
+                            </div>
+                            <button class="hero__btn btn">
+                                Book a consultation
+                            </button>
+                        </div>
+                        <img 
+                        src="./assets/img/section-1-img.svg" 
+                        alt=" " 
+                        class="hero__img"
+                        width="600"
+                        height="515"
+                        >
+                    </div>
+                    <!-- "подсекция" с партнерами -->
+                    <div class="hero__partners">
+                        <h2 class="visually-hidden">
+                            Partners
+                        </h2>
+                        <ul class="hero__partners-list">
+                            <li class="hero__partners-item">
+                                    <img 
+                                    src="./assets/img/amazon-logo.svg" 
+                                    alt="amazon" class="hero__partners-img"
+                                    width="130"
+                                    height="48"
+                                    >
+                            </li>
+                            <li class="hero__partners-item">
+                                    <img 
+                                    src="./assets/img/dribble-logo.svg" 
+                                    alt="dribble" class="hero__partners-img"
+                                    width="130"
+                                    height="48"
+                                    >
+                            </li>
+                            <li class="hero__partners-item">
+                                    <img 
+                                    src="./assets/img/hubspot-logo.svg" 
+                                    alt="hubspot" class="hero__partners-img"
+                                    width="130"
+                                    height="48"
+                                    >
+                            </li>
+                            <li class="hero__partners-item">
+                                    <img 
+                                    src="./assets/img/notion-logo.svg" 
+                                    alt="notion" class="hero__partners-img"
+                                    width="130"
+                                    height="48"
+                                    >
+                            </li>
+                            <li class="hero__partners-item">
+                                    <img 
+                                    src="./assets/img/netflix-logo.svg" 
+                                    alt="netflix" class="hero__partners-img"
+                                    width="130"
+                                    height="48"
+                                    >
+                            </li>
+                            <li class="hero__partners-item">
+                                    <img 
+                                    src="./assets/img/zoom-logo.svg" 
+                                    alt="zoom" class="hero__partners-img"
+                                    width="130"
+                                    height="48"
+                                    >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
 
+        <!-- Section_2 -->
+
+        <!-- Section_3 -->
+
+        <!-- Section_4 -->
+
+        <!-- Section_5 -->
+
+        <!-- Section_6 -->
+
+        <!-- Section_7 -->
+
+        <!-- Footer -->
+     </main>
+
+
+
+
+     <!-- модальное окно для бургер кнопки -->
+     <dialog class="mobile-overlay mobile-visible" id="mobileOverlay">
+        <!-- кнопка закрытия модального окна -->
+        <form class="mobile-overlay__close-btn-wrapper" method="dialog">
+            <button 
+            class="mobile-overlay__close-btn cross-btn"
+            type="submit"
+            ></button>
+        </form>
+        <!-- навигационное меню на мобилке -->
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay_link">
+                        About us
+                    </a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay_link">
+                        Services
+                    </a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay_link">
+                        Use Cases
+                    </a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay_link">
+                        Pricing
+                    </a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay_link">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+        </div>
+     </dialog>
 </body>
 </html>

@@ -1,12 +1,42 @@
 .header{
     padding-top: 60px;
 
+    // media
+    @include desktop{
+        padding-top: 30px;
+    }
+
+    // media
+    @include mobile{
+        padding-top: 15px;
+    }
+
     &-inner{
         // первоначальный разброс элементов
         display: flex;
         justify-content: space-between;
         align-items: center;
         column-gap: 40px;
+
+        // media
+        @include tablet{
+            column-gap: 30px;
+        }
+        
+    }
+
+    &-logo{
+        
+        // media
+        @include tablet{
+            max-width: 120px;
+        }
+
+        // media
+        @include mobile{
+            max-width: 144px;
+        }
+
     }
 
     &-menu {
@@ -14,11 +44,26 @@
         margin-left: auto;
         font-size: 20px;
 
+        // media
+        @include desktop{
+            font-size: 18px;
+        }
+
+        // media
+        @include tablet{
+            font-size: 16px;
+        }
+
         // расположение элементов в ряд
         &-list{
             display: flex;
             align-items: center;
             column-gap: 40px;
+
+            // media
+            @include desktop{
+                column-gap: 20px;
+            }
 
             &-item{
 
@@ -51,6 +96,14 @@
                     }
                 }
             }
+        }
+    }
+
+    &-btn{
+        @include tablet{
+            height: 48px;
+            padding-inline: 18px;
+            font-size: 16px;
         }
     }
 }
