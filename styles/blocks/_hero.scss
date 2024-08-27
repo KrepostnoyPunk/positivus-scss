@@ -97,11 +97,18 @@
             column-gap: 37px;
 
             // media
-            // @include tablet {
-            //     display: grid;
-            //     grid-template-columns: repeat(3, 1fr);
-            //     row-gap: 20px;
-            // } КАК БЛЯТЬ КУДА КОГО!?!??!?! ыыыыыыы сука
+            @include tablet {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;
+            } 
+        }
+
+        &-item{
+            @include tablet{
+                display: flex;
+                justify-content: center;
+            }
         }
 
         // gray filter for icons

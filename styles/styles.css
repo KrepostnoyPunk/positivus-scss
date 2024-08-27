@@ -572,6 +572,19 @@ h4 {
   -moz-column-gap: 37px;
        column-gap: 37px;
 }
+@media (max-width: 1023px) {
+  .hero__partners-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .hero__partners-item {
+    display: flex;
+    justify-content: center;
+  }
+}
 .hero__partners-img {
   filter: grayscale(1);
 }/*# sourceMappingURL=styles.css.map */
