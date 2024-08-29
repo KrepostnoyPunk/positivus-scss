@@ -4,6 +4,11 @@
 
     padding-block: var(--imgOffsetY);
 
+    // media
+    @include tablet{
+        --imgOffsetY: 0px;
+    }
+
     // позиционирование и стилизация обертки
     &__inner{
         display: flex;
@@ -25,10 +30,26 @@
         align-items: start;
         row-gap: 26px;
         padding: 60px;
+
+        // media
+        @include tablet{
+            padding: 50px;
+        }
+
+        // media
+        @include mobile{
+            row-gap: 20px;
+        }
     }
 
     // смещение изображения
     &__img{
         margin-block: calc(var(--imgOffsetY) * -1);
+
+        // media
+        @include tablet{
+            max-width: 40%;
+            height: auto;
+        }
     }
 }

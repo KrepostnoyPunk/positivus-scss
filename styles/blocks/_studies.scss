@@ -1,0 +1,57 @@
+.studies{
+    // стили для контейнера
+    padding: 70px 60px;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: var(--card-border-radius);
+
+    // media
+    @include desktop{
+        padding: 40px;
+    }
+
+    // позиционирование элементов внутри списка
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    // вертикальные полоски между колонками
+    &__item{
+        --inlinePadding: 64px;
+
+        // gap м-ду ссылкой и описанием
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        // media
+        @include desktop{
+            --inlinePadding: 32px;
+        }
+
+        // не первая колонка, т.е. 2 и 3 == 128px
+        &:not(:first-child){
+            padding-left: var(--inlinePadding);
+        }
+
+        // не последняя колонка, т.е. 1 и 2 == 128px
+        &:not(:last-child){
+            padding-right: var(--inlinePadding);
+            border-right: 1px solid var(--color-white);
+        }
+    }
+
+    &__link{
+        display: inline-flex;
+        align-items: center;
+        column-gap: 16px;
+        font-size: 20px;
+        line-height: 28px;
+        color: var(--color-lightgreen);
+
+        @include hover{
+            opacity: .8;
+        }
+    }
+}
