@@ -11,6 +11,7 @@
     --section-title-border-radius: 7px;
     --btn-border-radius: 14px;
     --card-border-radius: 45px;
+    --circle-border-radius: 50%;
 
     // тени карточек
     --shadow: 0px 5px 0px 0px var(--color-dark);
@@ -30,12 +31,12 @@
 
     --transition-duration: .2s;
 
-    // media
-    @include desktop{
-        --section-padding-y: 50px;
-    }
-    // media
-    @include mobile{
-        --section-padding-y: 30px;
-    }
+    // // media
+    // @include desktop{
+    //     --section-padding-y: 50px;
+    // }
+    // // media
+    // @include mobile{
+    //     --section-padding-y: 30px;
+    // }
 }

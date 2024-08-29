@@ -1,0 +1,10 @@
+.highlight-bg{
+    padding-inline: 7px;
+    background-color: var(--color-lightgreen);
+    border-radius: var(--section-title-border-radius);
+
+    // модификатор highlight
+    &--light{
+        background-color: var(--color-white);
+    }
+}

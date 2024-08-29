@@ -114,7 +114,12 @@
         // gray filter for icons
         &-img{
             filter: grayscale(1);
-        }
 
+            // media
+            @include hover{
+                cursor: pointer;
+                scale: 1.3;
+            }
+        }
     }
 }

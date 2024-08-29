@@ -31,13 +31,13 @@ h1{
 }
 
 h2{
-    @include elastic-text(40, 36)
+    @include elastic-text(36, 40)
 }
 
 h3{
-    @include elastic-text(30, 26)
+    @include elastic-text(26, 30)
 }
 
 h4{
-    @include elastic-text(20, 18)
+    @include elastic-text(18, 20)
 }

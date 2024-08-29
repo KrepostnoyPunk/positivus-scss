@@ -1,0 +1,133 @@
+.service-card{
+    // общие стили карточек (не содержимого)
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    min-height: 310px;
+    padding: 50px 50px;
+    background-color: var(--color-lightgray);
+    border-radius: var(--card-border-radius);
+    border: var(--border);
+    box-shadow: var(--shadow);
+
+    // media
+    @include mobile{
+        // внутренняя сетка для карточек
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 27px;
+    }
+
+    // модификатор карточки
+    &--green{
+        background-color: var(--color-lightgreen);
+    }
+
+    // модификатор карточки
+    &--dark{
+        background-color: var(--color-dark);
+    }
+
+    &__body{
+        // расположение текста и ссылки с кнопкой
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 30px;
+
+        // media
+        @include mobile{
+            // добавляет больше возможностей манипулировать элементами в grid/flex контейнере
+            display: contents;
+        }
+    }
+
+    &__title{
+        // превращение в колонку и выранивание по левому краю контента в h3
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-block: 4px;
+
+        // чтобы не слипались строки
+        span{
+            padding-block: 8px;
+        }
+
+        // media
+        @include mobile{
+            // растянет заголовок вытолкнув тем самым остальные элементы на одну линию
+            grid-column: -1/1;
+        }
+    }
+
+    // выравнивание элементом себя по центру его пространства
+    &__img{
+        align-self: center;
+
+        // media
+        @include desktop{
+            max-width: 50%;
+            height: auto;
+        }
+
+        // media
+        @include mobile{
+            max-width: 165px;
+        }
+    }
+
+    &__link{
+        // 
+        --iconColor: var(--color-lightgreen);
+
+        // центрирование ссылки
+        display: inline-flex;
+        align-items: center;
+        column-gap: 15px;
+        font-size: 20px;
+
+        @include hover{
+            scale: 1.2;
+        }
+
+        // media
+        @include mobile{
+            // прижмет к низу сетки
+            align-self: end;
+        }
+
+        // модификатор ссылки
+        &--light{
+            --iconColor: var(--color-dark);
+
+            color: var(--color-white);
+        }
+
+        // стилизация иконки (обертки) ссылки (стрелки)
+        &-icon{
+            // центрирование стрелки внутри обертки
+            @include flex-center;
+
+            // приведение 1 к 1
+            @include square-1-to-1(41px);
+
+            // стилизация обертки
+            background-color: currentColor;
+            border-radius: var(--circle-border-radius);
+
+            svg{
+                color: var(--iconColor);
+            }
+        }
+
+        // media
+        &-label{
+            @include mobile{
+                // скроет подпись на мобилке
+                @include visually-hidden;
+            }
+        }
+        
+    }
+}

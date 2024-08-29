@@ -1,0 +1,12 @@
+.services{
+    // отступ от карточек
+    &__list{
+        margin-bottom: 100px;
+
+        // media
+        @include mobile{
+            margin-bottom: 70px;
+        }
+    }
+
+}

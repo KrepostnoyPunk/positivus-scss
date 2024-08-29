@@ -1,0 +1,34 @@
+.banner{
+    // переменная-"компенсатор" смещения
+    --imgOffsetY: 24px;
+
+    padding-block: var(--imgOffsetY);
+
+    // позиционирование и стилизация обертки
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-lightgray);
+        border-radius: var(--card-border-radius);
+    }
+
+    // ограничение ширины описания
+    &__description{
+        max-width: 500px;
+    }
+
+    // выравнивание контента в body
+    &__body{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 26px;
+        padding: 60px;
+    }
+
+    // смещение изображения
+    &__img{
+        margin-block: calc(var(--imgOffsetY) * -1);
+    }
+}

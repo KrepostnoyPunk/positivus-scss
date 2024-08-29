@@ -1,3 +1,29 @@
-.section{
+.section {
     padding-block: var(--section-padding-y);
+
+    // центрирование и расположение элементов
+    &__header{
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        margin-bottom: 80px;
+
+        // media
+        @include mobile{
+            flex-direction: column;
+            row-gap: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+
+    // чтобы весь блок покрывался highlight-bg
+    &__title{
+        padding-block: 14px;
+    }
+
+    // ограничение макимальной ширины как в макете
+    &__description{
+        max-width: 580px;
+    }
 }

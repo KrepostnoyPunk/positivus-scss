@@ -1,0 +1,27 @@
+.grid {
+    --gridColumns: 1;
+
+    display: grid;
+    grid-template-columns: repeat(var(--gridColumns), 1fr);
+    gap: 40px;
+
+    // media
+    @include mobile{
+        gap: 30px;
+    }
+
+    // создание модификаторов для .grid от 1 до 12
+    @for $i from 2 through 12{
+        &--#{$i} {
+            --gridColumns: #{$i};
+        }
+    }
+
+    // in .grid.grid--2
+    &--2{
+        // media
+        @include tablet{
+            --gridColumns: 1;
+        }
+    }
+}
