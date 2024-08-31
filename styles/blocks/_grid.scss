@@ -24,4 +24,16 @@
             --gridColumns: 1;
         }
     }
+
+    &--3{
+        // media
+        @include desktop{
+            --gridColumns: 2;
+        }
+
+        // media
+        @include mobile{
+            --gridColumns: 1;
+        }
+    }
 }

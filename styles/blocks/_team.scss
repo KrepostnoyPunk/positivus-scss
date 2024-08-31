@@ -1,0 +1,22 @@
+.team{
+    // разделение карточек и кнопки
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    // media
+    @include mobile{
+        row-gap: 30px;
+    }
+
+    // корректировка параметров кнопки
+    &__btn{
+        min-width: 269px;
+        align-self: flex-end;
+
+        // media
+        @include mobile{
+            width: 100%;
+        }
+    }
+}

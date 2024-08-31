@@ -1,0 +1,141 @@
+.process{
+    // позиционирование элементов списка
+    &__list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        // замена дефолтного счетчика на кастомный
+        counter-reset: custom-counter;
+        list-style: none;
+
+        // media
+        @include mobile{
+            row-gap: 20px;
+        }
+    }
+
+    &__item{
+        // порядковое значение счетчика == порядковое значение custom-counter
+        counter-increment: custom-counter;
+    }
+
+    // стили "карточек"
+    &__accordion{
+        padding: 40px 60px;
+        background-color: var(--color-lightgray);
+        border: var(--border);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition-duration);
+
+        // media
+        @include mobile{
+            padding: 30px;
+        }
+
+        @include hover{
+            background-color: var(--color-lightgreen);
+        }
+
+        // сработает только при наличии аттрибута у тега
+        &[open]{
+            background-color: var(--color-lightgreen);
+
+            // отобразит минус при раскрытом аккордионе
+            .process__accordion-indicator::after{
+                rotate: 0deg;
+            }
+        }
+
+        // раскид элементов внутри аккордиона
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 50px;
+            cursor: pointer;
+            user-select: none;
+
+            // media
+            @include mobile{
+                column-gap: 28px;
+            }
+        }
+
+        // создание кастомного счетчика
+        &-title{
+            // корректировка размера текста
+            @include elastic-text(18, 30);
+
+            // добавляет расстояние между номером и заголовком
+            display: flex;
+            align-items: center;
+            column-gap: 25px;
+
+            // media
+            @include mobile{
+                column-gap: 33px;
+            }
+
+            &::before{
+                content: '0' counter(custom-counter);
+                font-size: 2em;
+
+                // media
+                @include mobile{
+                    font-size: 30px;
+                }
+            }
+        }
+
+        // индикатор + -
+        &-indicator{
+            // центрирование и приведение 1 к 1
+            @include flex-center;
+            @include square-1-to-1(58px);
+
+            // media
+            @include mobile{
+                @include square-1-to-1(30px)
+            }
+
+            // media, чтобы не сужалcя индикатор на меньших экранах
+            flex-shrink: 0;
+
+            // для позиционирования индикаторов
+            position: relative;
+
+            // стили
+            background-color: var(--color-lightgray);
+            border: var(--border);
+            border-radius: 50%;
+
+            // рисовка и стилизация элементов индикаторов
+            &::before,
+            &::after{
+                // центрирование через абсолют
+                @include absolute-center;
+
+                // общие стили
+                content: '';
+                width: 45%;
+                height: 10%;
+                background-color: black;
+            }
+
+            // создание плюсикаааааа
+            &::after{
+                rotate: 90deg;
+                transition: var(--transition-duration);
+            }
+
+        }
+
+        // добавление отступа от заголовка и горизонтальной линии
+        &-body{
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: var(--border);
+        }
+    }
+}
