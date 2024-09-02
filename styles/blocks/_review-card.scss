@@ -1,0 +1,72 @@
+.review-card{
+    // переменные размера выступа bubble и смещения after
+    --reviewCardCornerWidth: 40px;
+    --revirewCardOffsetLeft: 52px;
+
+    // media
+    @include mobile{
+        --reviewCardCornerWidth: 30px;
+        --revirewCardOffsetLeft: 46px;
+    }
+
+    // позиционирование элементов в bubble
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    // media
+    @include mobile{
+        row-gap: 44px;
+    }
+
+    // стили для bubble
+    &__body{
+        position: relative;
+        border-radius: var(--card-border-radius);
+        border: 1px solid var(--color-lightgreen);
+        padding: 48px var(--revirewCardOffsetLeft) 52px;
+
+        // media
+        @include mobile{
+            padding: 30px;
+        }
+
+        // выступающий "уголок" у bubble
+        &::after{
+            // 1 к 1 размер
+            @include square-1-to-1(var(--reviewCardCornerWidth));
+
+            position: absolute;
+            top: 100%;
+            left: var(--revirewCardOffsetLeft);
+            content: '';
+            border: inherit;
+            background-color: var(--color-dark);
+            rotate: 45deg;
+            // квадрат в огрызок
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            // позиционирование на нижней линии bubble
+            translate: 0 -50%;
+        }
+    }
+
+    // элементы в футере из строки в колонку
+    &__footer{
+        display: flex;
+        flex-direction: column;
+
+        // рассчет отступа слева к началу текста
+        padding-left: calc(var(--reviewCardCornerWidth) + var(--revirewCardOffsetLeft) / 2
+        );
+    }
+
+    // перебивка дефолтного стиля курсива браузера
+    &__name,
+    &__organisation{
+        font-style: normal;
+    }
+
+    &__name{
+        color: var(--color-lightgreen);
+    }
+}

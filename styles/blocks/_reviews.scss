@@ -1,0 +1,91 @@
+.reviews{
+    // стили для "контейнера"
+    display: flex;
+    flex-direction: column;
+    row-gap: 110px;
+    padding-top: 84px;
+    padding-bottom: 54px;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: var(--card-border-radius);
+    overflow-x: hidden;
+
+    // media
+    @include tablet{
+        padding: 30px 30px 46px;
+        row-gap: 46px;
+    }
+
+    // расположение элементов в ряд
+    &__slider{
+        // ширина слайдера
+        --sliderWidth: 606px;
+        
+        // media
+        @include tablet{
+            --sliderWidth: 330px;
+        }
+
+        &-list{
+            display: flex;
+            column-gap: 50px;
+            // скролл
+            scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+            
+            // media
+            @include tablet-above{
+                // отрицательное смещение влево слайдеров как в макете на половину от их ширины
+                margin-left: calc(var(--sliderWidth) / 2 * -1);
+            }
+
+            // media
+            @include tablet{
+                column-gap: 30px;
+            }
+        }
+
+        // скролл
+        &-item{
+            scroll-snap-align: start;
+            min-width: var(--sliderWidth);
+        }
+    }
+
+    // базовый разброс элементов
+    &__actions{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // чтобы было по центру
+        width: 100%;
+        max-width: 564px;
+        margin-inline: auto;
+    }
+
+    // кнопъкы
+    &__arrow-btn{
+        @include reset-btn;
+        @include flex-center;
+        // зона нажатия кнопки
+        @include square-1-to-1(48px);
+
+        color: var(--color-white);
+
+        @include hover{
+            cursor: pointer;
+            opacity: .7;
+        }
+
+        // стили для первой кнопки по [disabled]
+        &[disabled]{
+            color: var(--color-gray-alt);
+            cursor: not-allowed;
+        }
+
+        // чтобы внутри элемента было 20px
+        svg{
+            @include square-1-to-1(20px)
+        }
+    }
+}

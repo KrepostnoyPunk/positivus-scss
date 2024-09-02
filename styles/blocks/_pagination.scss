@@ -1,0 +1,27 @@
+.pagination{
+    &__list{
+        display: flex;
+    }
+
+    &__btn{
+        @include reset-btn;
+        @include flex-center;
+        @include square-1-to-1(24px);
+
+        color: var(--color-white);
+
+        @include hover{
+            cursor: pointer;
+            opacity: .7;
+        }
+
+        svg{
+            @include square-1-to-1(14px);
+        }
+
+        &.is-current{
+            color: var(--color-lightgreen);
+        }
+
+    }
+}

@@ -39,6 +39,10 @@
         // максимально прижать к верху к праву (да)
         align-self: flex-start;
         margin-left: auto;
+
+        @include hover{
+            scale: 1.3;
+        }
     }
 
     &__body{
