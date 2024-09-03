@@ -1,0 +1,45 @@
+.field{
+    // позиционирование элементов внутри field
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 5px;
+
+    // media
+    @include mobile{
+        row-gap: 10px;
+    }
+
+    &__label{
+        @include elastic-text(14, 16)
+    }
+
+    // стили для input
+    &__input{
+        width: 100%;
+        height: var(--input-height);
+        padding-inline: 30px;
+        border: var(--border);
+        border-radius: var(--btn-border-radius);
+
+        // media
+        @include mobile{
+            padding-inline: 20px;
+        }
+        
+        &::placeholder{
+            color: var(--color-gray-alt);
+        }
+
+        &--textarea{
+            height: 190px;
+            padding-block: 18px;
+            resize: none;
+
+            // media
+            @include mobile{
+                height: 132px;
+            }
+        }
+    }
+}

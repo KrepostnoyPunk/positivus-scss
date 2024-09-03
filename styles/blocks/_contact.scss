@@ -1,0 +1,85 @@
+.contact{
+    overflow-x: hidden;
+    
+    // media
+    // стили контейнера
+    @include mobile-above{
+        padding: 60px 100px 80px;
+        background-color: var(--color-lightgray);
+        border-radius: var(--card-border-radius);
+    }
+
+    // изображение
+    position: relative;
+    &::after{
+        --imgOffsetY: 62px;
+
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        translate: -50% -50%;
+        height: calc(100% - var(--imgOffsetY) * 2);
+        aspect-ratio: 1;
+        background: url('/assets/img/contact-img.svg') center/contain no-repeat;
+
+        // media
+        @include tablet{
+            display: none;
+        }
+    }
+
+    // позиционирование элементов внутри контейнера-формы
+    &__form{
+        display: flex;
+        flex-direction: column;
+        
+        // media
+        @include tablet-above{
+            max-width: 556px;
+        }
+
+        // media
+        @include mobile-above{
+             // расстояние между flex элементами
+            row-gap: 40px;
+        }
+    }
+
+    &__body{
+        // позиционирование элементов внутри body
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+
+        // media
+        @include mobile{
+            margin-bottom: 30px;
+            row-gap: 20px;
+        }
+    }
+
+    &__radios,
+    &__body {
+        // media
+        @include mobile{
+            background-color: var(--color-lightgray);
+        }
+    }
+
+    &__radios{
+        // media
+        @include mobile{
+            padding: 40px 52px 36px;
+            border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+        }
+    }
+
+    &__body{
+        // media
+        @include mobile{
+            padding: 10px 30px 50px;
+            border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+        }
+    }
+}

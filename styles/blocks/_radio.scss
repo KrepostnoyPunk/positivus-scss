@@ -1,0 +1,43 @@
+.radio{
+    // позиционирование радиокнопки
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+
+    // селектор контроля появления статуса checked
+    &__input{
+        &:not(:checked) + .radio__btn::after{
+            opacity: 0;
+        }
+    }
+
+    &__btn{
+        // масштабирование и центрирование
+        @include flex-center;
+        @include square-1-to-1(28px);
+
+        position: relative;
+
+        // стили "внешней кнопки
+        border-radius: var(--circle-border-radius);
+        background-color: var(--color-white);
+        border: var(--border);
+
+        @include hover{
+            opacity: .7;
+        }
+
+        // внутренний зеленый кружок в кнопке
+        &::after{
+            @include absolute-center;
+            @include square-1-to-1(60%);
+
+            // стили "внутренней кнопки
+            content: '';
+            position: absolute;
+            background-color: var(--color-lightgreen);
+            border-radius: inherit;
+            transition: var(--transition-duration);
+        }
+    }
+}
