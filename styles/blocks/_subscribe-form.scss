@@ -1,0 +1,17 @@
+.subscribe-form{
+    // стили для контейнера формы
+    padding: 58px 40px;
+    display: flex;
+    column-gap: 20px;
+    background-color: var(--color-dark-alt);
+    border-radius: var(--btn-border-radius);
+
+    // media
+    @include tablet{
+        flex-direction: column;
+        row-gap: 22px;
+        padding: 30px;
+        width: 100%;
+        max-width: 450px;
+    }
+}

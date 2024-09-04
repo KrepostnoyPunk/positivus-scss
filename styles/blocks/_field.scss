@@ -1,4 +1,11 @@
 .field{
+    // локальные перменные для большей гибкости
+    --inputHeight: var(--input-height);
+    --inputTextColor: var(--color-dark);
+    --inputBgColor: var(--color-white);
+    --inputBorderColor: var(--color-dark);
+    --inputPlaceholderColor: var(--color-gray-alt);
+
     // позиционирование элементов внутри field
     display: flex;
     flex-direction: column;
@@ -10,6 +17,19 @@
         row-gap: 10px;
     }
 
+    // модификатор высоты
+    &--bigger-h{
+        --inputHeight: var(--btn-height); 
+    }
+
+    // модификатор цвета
+    &--dark-bg{
+        --inputBorderColor: var(--color-white);
+        --inputBgColor: var(--color-dark-alt);
+        --inputPlaceholderColor: var(--color-white);
+        --inputTextColor: var(--color-lightgreen);
+    }
+
     &__label{
         @include elastic-text(14, 16)
     }
@@ -17,9 +37,11 @@
     // стили для input
     &__input{
         width: 100%;
-        height: var(--input-height);
+        height: var(--inputHeight);
+        background-color: var(--inputBgColor);
         padding-inline: 30px;
-        border: var(--border);
+        color: var(--inputTextColor);
+        border: 1px solid var(--inputBorderColor);
         border-radius: var(--btn-border-radius);
 
         // media
@@ -28,7 +50,7 @@
         }
         
         &::placeholder{
-            color: var(--color-gray-alt);
+            color: var(--inputPlaceholderColor);
         }
 
         &--textarea{

@@ -1,0 +1,25 @@
+.soc1als{
+    // позиционирование эелементов внутри
+    &__list{
+        display: flex;
+        column-gap: 20px;
+    }
+    // стили и размеры для
+    &__link{
+        @include flex-center;
+        @include square-1-to-1(30px);
+
+        color: var(--color-dark);
+        background-color: var(--color-white);
+        border-radius: var(--circle-border-radius);
+
+        @include hover{
+            background-color: var(--color-lightgreen);
+        }
+
+        svg{
+            width: 50%;
+            height: 50%;
+        }
+    }
+}

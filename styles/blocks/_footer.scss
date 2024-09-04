@@ -1,0 +1,170 @@
+.footer{
+    // media
+    @include mobile{
+        padding-inline: 0;
+    }
+
+    // внутренние отступы
+    &__inner{
+        padding: 55px 60px 50px;
+        color: var(--color-white);
+        background-color: var(--color-dark);
+
+        // media
+        @include mobile-above{
+            border-radius: var(--btn-border-radius) var(--btn-border-radius) 0 0;
+        }
+
+        // media
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            padding: 50px 20px 30px;
+            align-items: center;
+            row-gap: 37px;
+        }
+    }
+    // позиционирование внутри
+    &__navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 30px;
+        margin-bottom: 66px;
+
+        // media
+        @include tablet{
+            flex-direction: column;
+            align-items: center;
+            row-gap: 37px;
+        }
+
+        // media
+        @include mobile{
+            display: contents;
+        }
+    }
+    // позиционирование элементов внутри
+    &__menu{
+        &-list{
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
+
+            // media
+            @include mobile{
+                flex-direction: column;
+                row-gap: 15px;
+            }
+        }
+        // нижнее подчеркивание для
+        &-link{
+            display: inline-flex;
+            align-items: center;
+            height: 40px;
+            text-decoration: underline;
+
+            @include hover{
+                opacity: .7;
+            }
+
+            // media
+            @include mobile{
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__soc1als{
+        // media
+        @include mobile{
+            order: 1;
+        }
+    }
+
+    // позиционирование элементов в
+    &__body{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 50px;
+        // media
+        // отступы для разделителя
+        @include mobile-above{
+            &:not(:last-child){
+                margin-bottom: 50px;
+                padding-bottom: 50px;
+                border-bottom: 1px solid currentColor;
+               }
+        }
+
+        //  media
+        @include mobile{
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }  
+    }
+    // позиционирование элементов в
+    &__contacts{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 27px;
+        // изменение цвета у
+        &-title{
+            color: var(--color-dark);
+        }
+        // переопределение normalize отступа для p в 
+        &-contacts{
+            p{
+                --paragraphMarginBottom: 20px;
+            }
+
+            a{
+                @include hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        // media
+        @include mobile{
+            text-align: center;
+            align-items: center;
+            margin-bottom: 37px;
+
+            p{
+                --paragraphMarginBottom: 15px;
+            }
+        }
+    }
+    // позиционирование копирайта
+    &__extra{
+        display: flex;
+        column-gap: 40px;
+        // underline для
+        a{
+            text-decoration: underline;
+
+            @include hover{
+                opacity: .7;
+            }
+        }
+
+        // media
+        @include mobile{
+            order: 2;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 15px;
+
+            a{
+                text-decoration: none;
+            }
+            
+            padding-top: 37px;
+            border-top: 1px solid var(--color-white);
+            width: 100%;
+        }
+    }
+}
